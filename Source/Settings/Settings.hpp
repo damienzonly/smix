@@ -1,7 +1,10 @@
 
 class Settings {
     public:
+        Settings() {
+            mDeviceManager = std::make_unique<juce::AudioDeviceManager>();
+        }
         void init();
     private:
-        juce::AudioDeviceManager mDeviceManager;
+        std::unique_ptr<juce::AudioDeviceManager> mDeviceManager;
 };
